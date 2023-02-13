@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:tns="http://serviceplatformen.dk/xml/print/PKO_PostStatus/1/types"
+        targetNamespace="http://serviceplatformen.dk/xml/print/PKO_PostStatus/1/types"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified">
+
+    <element name="PKO_PostStatus" type="tns:PKO_PostStatusType" />
+
+    <complexType name="PKO_PostStatusType">
+        <sequence>
+            <element name="TransmissionId" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="MessageUUID" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="MessageId" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="AfsendelseIdentifikator" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="ForsendelseIdentifikator" type="integer" minOccurs="0" maxOccurs="1" />
+            <element name="KanalKode" type="tns:KanalKodeType" minOccurs="1" maxOccurs="1" />
+            <element name="TransaktionsDatoTid" type="dateTime" minOccurs="1" maxOccurs="1" />
+            <element name="BrugerNavn" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="EnhedTekst" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="AfsenderSystemIdentifikator" type="string" minOccurs="0" maxOccurs="1" />
+            <element name="TransaktionsStatusKode" type="tns:TransaktionsStatusKodeType" minOccurs="1" maxOccurs="1" />
+            <element name="ForsendelseTypeIdentifikator" type="string" minOccurs="1" maxOccurs="1" />
+            <element name="CorrelationId" type="string" minOccurs="1" maxOccurs="1" />
+            <element name="FejlDetaljer" type="tns:FejlDetaljerType" minOccurs="0" maxOccurs="1" />
+            <element name="ForsendelseHaendelseSamling" type="tns:ForsendelseHaendelseSamlingType" minOccurs="0" maxOccurs="1" />
+        </sequence>
+    </complexType>
+
+    <simpleType name="KanalKodeType">
+        <restriction base="string">
+            <enumeration value="Digital Post"/>
+            <enumeration value="Fysisk Post"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="TransaktionsStatusKodeType">
+        <restriction base="string">
+            <!-- Digital Post: -->
+            <enumeration value="Fejlet Serviceplatform" />
+            <!-- Fjernprint: -->
+            <enumeration value="Afsendt"/>
+            <enumeration value="Modtaget Fjernprint"/>
+            <enumeration value="Klar"/>
+            <enumeration value="Afleveret til print og kuvertering"/>
+            <enumeration value="Modtaget Post Danmark"/>
+            <enumeration value="Tilbagekaldt"/>
+            <enumeration value="Opdatering fra Post Danmark"/>
+            <!-- Both: -->
+            <enumeration value="Modtaget Digital Post"/>
+            <enumeration value="Afleveret Digital Post"/>
+            <enumeration value="Fejlet" />
+        </restriction>
+    </simpleType>
+
+    <complexType name="FejlDetaljerType">
+        <sequence>
+            <element name="FejlKode" type="string" minOccurs="1" maxOccurs="1" />
+            <element name="FejlTekst" type="string" minOccurs="1" maxOccurs="1" />
+        </sequence>
+    </complexType>
+
+    <complexType name="ForsendelseHaendelseSamlingType">
+        <sequence>
+            <element name="ForsendelseHaendelse" type="tns:ForsendelseHaendelseType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="ForsendelseHaendelseType">
+        <sequence>
+            <element name="ForsendelseHaendelseTypeKode" type="integer" />
+            <element name="ForsendelseHaendelseDatoTid" type="dateTime" />
+            <element name="ForsendelseHaendelseBeloeb" type="decimal" minOccurs="0"/>
+        </sequence>
+    </complexType>
+</schema>

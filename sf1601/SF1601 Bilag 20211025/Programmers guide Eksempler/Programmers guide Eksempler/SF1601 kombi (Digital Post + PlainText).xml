@@ -1,0 +1,32 @@
+﻿<kombi_request>
+   <KombiValgKode>Digital Post</KombiValgKode>   
+   <memo:Message xmlns:memo="https://DigitalPost.dk/MeMo-1" memoVersion="1.1" memoSchVersion="1.1.0">
+      <memo:MessageHeader>
+         <memo:messageType>DIGITALPOST</memo:messageType>
+         <memo:messageUUID>cfabcd05-ba10-426e-bac2-0cf33f0b7a38</memo:messageUUID>
+         <memo:label>Besked #2</memo:label>
+         <memo:mandatory>false</memo:mandatory>
+         <memo:legalNotification>false</memo:legalNotification>
+         <memo:Sender>
+            <memo:senderID>19435075</memo:senderID>
+            <memo:idType>CVR</memo:idType>
+            <memo:label>KOMBIT</memo:label>
+         </memo:Sender>
+         <memo:Recipient>
+            <memo:recipientID>1705880000</memo:recipientID>
+            <memo:idType>CPR</memo:idType>
+         </memo:Recipient>
+      </memo:MessageHeader>
+      <memo:MessageBody>
+         <memo:createdDateTime>2021-10-20T12:00:00Z</memo:createdDateTime>
+         <memo:MainDocument>
+            <memo:File>
+               <memo:encodingFormat>text/plain</memo:encodingFormat>
+               <memo:filename>Besked.txt</memo:filename>
+               <memo:language>da</memo:language>
+               <memo:content>RW4gbnllIGJlc2tlZA0KTWVkIGxpbmplc2tpZnQNClZpcmtlciBkZXQ/</memo:content>
+            </memo:File>
+         </memo:MainDocument>
+      </memo:MessageBody>
+   </memo:Message>
+</kombi_request>

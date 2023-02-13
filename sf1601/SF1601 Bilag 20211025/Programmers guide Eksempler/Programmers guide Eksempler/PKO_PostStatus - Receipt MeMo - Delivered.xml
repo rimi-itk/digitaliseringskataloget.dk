@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:Haendelsesbesked xmlns="urn:oio:sagdok:3.0.0" xmlns:ns2="urn:oio:besked:kuvert:1.0" xmlns:ns3="http://www.w3.org/2000/09/xmldsig#">
+    <ns2:BeskedId>
+        <UUIDIdentifikator>c4579c2f-cc09-4e51-b555-9282f6fa67c3</UUIDIdentifikator>
+    </ns2:BeskedId>
+    <ns2:BeskedVersion>1.0</ns2:BeskedVersion>
+    <ns2:Beskedkuvert>
+        <ns2:Filtreringsdata>
+            <ns2:Beskedtype>
+                <UUIDIdentifikator>d2bed63c-4853-4008-b6e0-a74c15b15fbf</UUIDIdentifikator>
+            </ns2:Beskedtype>
+            <ns2:BeskedAnsvarligAktoer>
+                <UUIDIdentifikator>96514e13-afdd-44d6-95a8-adc2ca19b127</UUIDIdentifikator>
+            </ns2:BeskedAnsvarligAktoer>
+            <ns2:TilladtModtager>
+                <URNIdentifikator>urn:oio:cvr:19435075</URNIdentifikator>
+            </ns2:TilladtModtager>
+            <ns2:RelateretObjekt>
+                <ns2:ObjektId>
+                    <UUIDIdentifikator>f269ca0c-7b5d-49e2-a585-1ee39ba5a431</UUIDIdentifikator>
+                </ns2:ObjektId>
+                <ns2:ObjektType>
+                    <UUIDIdentifikator>91aa31b3-c4b3-499e-8689-93b1ef89f319</UUIDIdentifikator>
+                </ns2:ObjektType>
+            </ns2:RelateretObjekt>
+            <ns2:ObjektRegistrering>
+                <ns2:ObjektRegistreringId>
+                    <UUIDIdentifikator>07ce919b-2bae-419b-8725-7d8ec83474da</UUIDIdentifikator>
+                </ns2:ObjektRegistreringId>
+                <ns2:RegistreringsAktoer>
+                    <UUIDIdentifikator>19dc3a1d-c629-4853-b566-7fe49cf674ce</UUIDIdentifikator>
+                </ns2:RegistreringsAktoer>
+                <ns2:Registreringstidspunkt>
+                    <TidsstempelDatoTid>2022-02-09T08:31:27.525Z</TidsstempelDatoTid>
+                </ns2:Registreringstidspunkt>
+                <ns2:ObjektAnsvarligMyndighed>
+                    <URNIdentifikator>urn:oio:cvr:19435075</URNIdentifikator>
+                </ns2:ObjektAnsvarligMyndighed>
+                <ns2:ObjektId>
+                    <UUIDIdentifikator>05fe77eb-4cc4-475f-8fca-1f777cf6d5bf</UUIDIdentifikator>
+                </ns2:ObjektId>
+                <ns2:ObjektType>
+                    <UUIDIdentifikator>9a7be69f-b736-4e0e-9d5b-78d4f43e7ad7</UUIDIdentifikator>
+                </ns2:ObjektType>
+                <ns2:ObjektHandling>
+                    <UUIDIdentifikator>f7161a89-5068-4023-bc80-d7f4daad2a2e</UUIDIdentifikator>
+                </ns2:ObjektHandling>
+            </ns2:ObjektRegistrering>
+        </ns2:Filtreringsdata>
+        <ns2:Leveranceinformation>
+            <ns2:Dannelsestidspunkt>
+                <TidsstempelDatoTid>2022-02-09T08:31:27.609Z</TidsstempelDatoTid>
+            </ns2:Dannelsestidspunkt>
+            <ns2:TransaktionsId>
+                <UUIDIdentifikator>a137a8e2-d0a9-4955-a346-150ae32717d8</UUIDIdentifikator>
+            </ns2:TransaktionsId>
+            <ns2:Kildesystem>
+                <UUIDIdentifikator>19dc3a1d-c629-4853-b566-7fe49cf674ce</UUIDIdentifikator>
+            </ns2:Kildesystem>
+            <ns2:KildesystemIPAdresse>::FFFF:172.30.217.227</ns2:KildesystemIPAdresse>
+            <ns2:KildesystemAkkreditiver>U0VSSUFMTlVNQkVSPUNWUjoxOTQzNTA3NS1GSUQ6Mjg3NjQwNTYgKyBDTj1Lb21iaXQtU1BGLXRlc3Qtc3RzLVNpa2tlcmhlZCAoZnVua3Rpb25zY2VydGlmaWthdCksIE89S09NQklUIEEvUyAvLyBDVlI6MTk0MzUwNzUsIEM9REs=.MTYwNDMxOTk0Ng==.Q049VFJVU1QyNDA4IFN5c3RlbXRlc3QgWFhYSVYgQ0EsIE89VFJVU1QyNDA4LCBDPURL</ns2:KildesystemAkkreditiver>
+            <ns2:Sikkerhedsklassificering>
+                <UUIDIdentifikator>1d81c472-0808-44cc-963d-f5ef0170ae1d</UUIDIdentifikator>
+            </ns2:Sikkerhedsklassificering>
+            <ns2:Leveranceruter>
+                <ns2:Leverancerute>
+                    <ns2:Fordelingssystem>
+                        <UUIDIdentifikator>f9fbbb38-4b2f-11e5-885d-feff819cdc9f</UUIDIdentifikator>
+                    </ns2:Fordelingssystem>
+                    <ns2:ModtagelsesTidspunkt>
+                        <TidsstempelDatoTid>2022-02-09T10:44:36.729+01:00</TidsstempelDatoTid>
+                    </ns2:ModtagelsesTidspunkt>
+                    <ns2:LeveranceTidspunkt>
+                        <TidsstempelDatoTid>2022-02-09T10:44:36.729+01:00</TidsstempelDatoTid>
+                    </ns2:LeveranceTidspunkt>
+                    <ns2:ModtagetFraSystem>
+                        <UUIDIdentifikator>19dc3a1d-c629-4853-b566-7fe49cf674ce</UUIDIdentifikator>
+                    </ns2:ModtagetFraSystem>
+                    <ns2:ErLeveretIHenholdTil>
+                        <UUIDIdentifikator>ac4172c8-72b6-4859-a219-3b57beccbd56</UUIDIdentifikator>
+                    </ns2:ErLeveretIHenholdTil>
+                    <ns2:LeveranceruteLokalUdvidelse>
+                        <ns2:AntalLeveranceforsoeg>1</ns2:AntalLeveranceforsoeg>
+                    </ns2:LeveranceruteLokalUdvidelse>
+                </ns2:Leverancerute>
+            </ns2:Leveranceruter>
+        </ns2:Leveranceinformation>
+    </ns2:Beskedkuvert>
+    <ns2:Beskeddata>
+        <Base64 xmlns="urn:besked:kuvert:1.0" xmlns:ns4="urn:oio:sagdok:3.0.0" content-type="application/xml" encoding="UTF-8" file-type=".xml">PFBLT19Qb3N0U3RhdHVzIHhtbG5zPSJodHRwOi8vc2VydmljZXBsYXRmb3JtZW4uZGsveG1sL3ByaW50L1BLT19Qb3N0U3RhdHVzLzEvdHlwZXMiPjxUcmFuc21pc3Npb25JZD4wN2NlOTE5Yi0yYmFlLTQxOWItODcyNS03ZDhlYzgzNDc0ZGE8L1RyYW5zbWlzc2lvbklkPjxNZXNzYWdlVVVJRD4wNWZlNzdlYi00Y2M0LTQ3NWYtOGZjYS0xZjc3N2NmNmQ1YmY8L01lc3NhZ2VVVUlEPjxLYW5hbEtvZGU+RGlnaXRhbCBQb3N0PC9LYW5hbEtvZGU+PFRyYW5zYWt0aW9uc0RhdG9UaWQ+MjAyMi0wMi0wOVQwODozMToyNy41MjVaPC9UcmFuc2FrdGlvbnNEYXRvVGlkPjxUcmFuc2FrdGlvbnNTdGF0dXNLb2RlPkFmbGV2ZXJldCBEaWdpdGFsIFBvc3Q8L1RyYW5zYWt0aW9uc1N0YXR1c0tvZGU+PENvcnJlbGF0aW9uSWQ+MDdjZTkxOWItMmJhZS00MTliLTg3MjUtN2Q4ZWM4MzQ3NGRhPC9Db3JyZWxhdGlvbklkPjxGZWpsRGV0YWxqZXIvPjwvUEtPX1Bvc3RTdGF0dXM+</Base64>
+    </ns2:Beskeddata>
+</ns2:Haendelsesbesked>
+<!--
+Contents of Beskeddata/Base64 decoded:
+
+<PKO_PostStatus xmlns="http://serviceplatformen.dk/xml/print/PKO_PostStatus/1/types">
+	<TransmissionId>07ce919b-2bae-419b-8725-7d8ec83474da</TransmissionId>
+	<MessageUUID>05fe77eb-4cc4-475f-8fca-1f777cf6d5bf</MessageUUID>
+	<KanalKode>Digital Post</KanalKode>
+	<TransaktionsDatoTid>2022-02-09T08:31:27.525Z</TransaktionsDatoTid>
+	<TransaktionsStatusKode>Afleveret Digital Post</TransaktionsStatusKode>
+	<CorrelationId>07ce919b-2bae-419b-8725-7d8ec83474da</CorrelationId>
+	<FejlDetaljer/>
+</PKO_PostStatus>
+-->

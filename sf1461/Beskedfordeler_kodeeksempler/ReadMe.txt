@@ -1,0 +1,1 @@
+Kodeeksmpler til SF1461 Modtag beskeder via Beskedfordeler er tilgængeligt i følgende GitHub repository: https://github.com/kombit/bfo_infrastructureSamples-java
