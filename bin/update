@@ -1,11 +1,6 @@
-#!/usr/bin/env bash
-# set -o errexit -o errtrace -o noclobber -o nounset -o pipefail
-IFS=$'\n\t'
+#!/usr/bin/env sh
 
-script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-project_dir=$(cd "$script_dir"/../ && pwd)
-bold=$(tput bold)
-normal=$(tput sgr0)
+project_dir=$(pwd)
 
 do_it() {
     source_url="$1"
@@ -21,7 +16,7 @@ do_it() {
     rm -fr "$target_path"
     mkdir -p "$target_path"
     cd "$target_path" || exit
-    unzip -o "$tmp_filename" > /dev/null 2>&1
+    unzip -q -o "$tmp_filename" > /dev/null 2>&1
 
     while true; do
         archive=$(find . -name "*.zip" -print0 -quit)
@@ -29,12 +24,12 @@ do_it() {
             break
         else
             echo "${bold}Extracting $archive${normal}"
-            unzip -d "$(dirname "$archive")" -o "$archive" #> /dev/null 2>&1
+            unzip -q -d "$(dirname "$archive")" -o "$archive" #> /dev/null 2>&1
             rm "$archive"
         fi
     done
 
-    find "$target_path" -type f
+    # find "$target_path" -type f
 }
 
 # https://digitaliseringskataloget.dk/integration/sf1461
@@ -42,3 +37,10 @@ do_it 'https://docs.kombit.dk/integration/sf1461/1.0/pakke' 'sf1461'
 
 # https://digitaliseringskataloget.dk/integration/sf1601
 do_it 'https://docs.kombit.dk/integration/sf1601/1.0/pakke' 'sf1601'
+
+# # https://digitaliseringskataloget.dk/integration/sf1500
+# do_it 'https://docs.kombit.dk/integration/sf1500/3.0/pakke' 'sf1500'
+
+cd "$project_dir"
+
+tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.pdf' -o index.html --houtro=/dev/null

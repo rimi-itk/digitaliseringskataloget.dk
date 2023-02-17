@@ -13,9 +13,8 @@ open "http:///$(itkdev-docker-compose port nginx 8080)"
 
 ## Coding standards
 
-Install [ShellCheck](https://github.com/koalaman/shellcheck) and check the code:
+Check the code with [ShellCheck](https://github.com/koalaman/shellcheck):
 
 ```sh
-brew install shellcheck
-shellcheck ./bin/update
+docker compose run --rm shellcheck shellcheck ./bin/update
 ```
