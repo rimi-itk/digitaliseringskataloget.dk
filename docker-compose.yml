@@ -6,6 +6,12 @@ networks:
     external: true
 
 services:
+  ubuntu:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+
   nginx:
     image: nginxinc/nginx-unprivileged:alpine
     networks:

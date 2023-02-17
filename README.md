@@ -3,8 +3,10 @@
 Update:
 
 ```sh
-./bin/update
+docker compose run --build --rm ubuntu bin/update
 ```
+
+Serve:
 
 ```sh
 docker compose up --detach
