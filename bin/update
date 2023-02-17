@@ -1,14 +1,19 @@
 #!/usr/bin/env sh
 
 project_dir=$(pwd)
+target_dir="$project_dir"
+
+exec_unzip() {
+    unzip -O CP850 -q "$@"
+}
 
 do_it() {
     source_url="$1"
-    target_path="$project_dir/digitaliseringskataloget.dk/$2"
+    target_path="$target_dir/digitaliseringskataloget.dk/$2"
 
-    tmp_filename="$project_dir/tmp.zip"
+    tmp_filename="$target_dir/tmp.zip"
 
-    cd "$project_dir" || exit
+    cd "$target_dir" || exit
     echo "${bold}Fetching $source_url${normal}"
     curl --silent --location "$source_url" >| "$tmp_filename"
 
@@ -16,7 +21,7 @@ do_it() {
     rm -fr "$target_path"
     mkdir -p "$target_path"
     cd "$target_path" || exit
-    unzip -q -o "$tmp_filename" > /dev/null 2>&1
+    exec_unzip -o "$tmp_filename" #> /dev/null 2>&1
 
     while true; do
         archive=$(find . -name "*.zip" -print0 -quit)
@@ -24,12 +29,10 @@ do_it() {
             break
         else
             echo "${bold}Extracting $archive${normal}"
-            unzip -q -d "$(dirname "$archive")" -o "$archive" #> /dev/null 2>&1
+            exec_unzip -d "$(dirname "$archive")" -o "$archive" #> /dev/null 2>&1
             rm "$archive"
         fi
     done
-
-    # find "$target_path" -type f
 }
 
 cd "$project_dir"
