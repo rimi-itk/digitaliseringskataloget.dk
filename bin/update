@@ -4,7 +4,7 @@ project_dir=$(pwd)
 
 do_it() {
     source_url="$1"
-    target_path="$project_dir/$2"
+    target_path="$project_dir/digitaliseringskataloget.dk/$2"
 
     tmp_filename="$project_dir/tmp.zip"
 
@@ -32,6 +32,9 @@ do_it() {
     # find "$target_path" -type f
 }
 
+cd "$project_dir"
+rm -fr digitaliseringskataloget.dk/
+
 # https://digitaliseringskataloget.dk/integration/sf1461
 do_it 'https://docs.kombit.dk/integration/sf1461/1.0/pakke' 'sf1461'
 
@@ -43,4 +46,4 @@ do_it 'https://docs.kombit.dk/integration/sf1500/3.0/pakke' 'sf1500'
 
 cd "$project_dir"
 
-tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.pdf' -o index.html --houtro=/dev/null
+tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.pdf' -o index.html #--houtro=/dev/null
