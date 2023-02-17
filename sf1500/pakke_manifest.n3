@@ -1,0 +1,49 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcmi:  <http://purl.org/dc/terms/> .
+@prefix qw:    <http://www.qualiware.com/> .
+@prefix kombitrm: <http://kombit.dk/releasemanagement/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov:  <https://www.w3.org/TR/prov-o/#> .
+@prefix www-addr: <https://www.w3.org/Addressing/> .
+
+<https://docs.kombit.dk/integration/sf1500/latest/beskrivelse>
+        a                    prov:Location ;
+        kombitrm:version     "3.0" ;
+        dcterms:created      "2021-12-10T10:17:03.700+0100" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/XHMY> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf1500/latest/beskrivelse" ;
+        www-addr:url         "https://docs.kombit.dk/integration/sf1500/3.0/beskrivelse" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+qw:guid-3ee9a121-305a-4330-a072-f8231f513c9b
+        dcterms:references  <https://docs.kombit.dk/integration/sf1500/3.0/pakke> , <https://docs.kombit.dk/integration/sf1500/3.0/beskrivelse> .
+
+<https://docs.kombit.dk/integration/sf1500/3.0/pakke>
+        a                    dcterms:BibliographicResource ;
+        kombitrm:version     "3.0" ;
+        dcterms:created      "2021-12-10T10:17:03.731+0100" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/XHMY> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf1500/3.0/pakke" ;
+        dcterms:title        "SF1500 - Dokumentationspakke til Organisation_3.0.zip" ;
+        www-addr:url         "file:///../SF1500+-+Dokumentationspakke+til+Organisation_3.0.zip" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+<https://docs.kombit.dk/integration/sf1500/latest/pakke>
+        a                    prov:Location ;
+        kombitrm:version     "3.0" ;
+        dcterms:created      "2021-12-10T10:17:03.731+0100" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/XHMY> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf1500/latest/pakke" ;
+        www-addr:url         "https://docs.kombit.dk/integration/sf1500/3.0/pakke" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+<https://docs.kombit.dk/integration/sf1500/3.0/beskrivelse>
+        a                    dcterms:BibliographicResource ;
+        kombitrm:version     "3.0" ;
+        dcterms:created      "2021-12-10T10:17:03.700+0100" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/XHMY> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf1500/3.0/beskrivelse" ;
+        dcterms:title        "SF1500 Integrationsbeskrivelse v3.0 - v6.0 Services - 20210511.pdf" ;
+        www-addr:url         "file:///./SF1500 Integrationsbeskrivelse v3.0 - v6.0 Services - 20210511.pdf" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .

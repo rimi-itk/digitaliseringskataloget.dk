@@ -38,8 +38,8 @@ do_it 'https://docs.kombit.dk/integration/sf1461/1.0/pakke' 'sf1461'
 # https://digitaliseringskataloget.dk/integration/sf1601
 do_it 'https://docs.kombit.dk/integration/sf1601/1.0/pakke' 'sf1601'
 
-# # https://digitaliseringskataloget.dk/integration/sf1500
-# do_it 'https://docs.kombit.dk/integration/sf1500/3.0/pakke' 'sf1500'
+# https://digitaliseringskataloget.dk/integration/sf1500
+do_it 'https://docs.kombit.dk/integration/sf1500/3.0/pakke' 'sf1500'
 
 cd "$project_dir"
 
