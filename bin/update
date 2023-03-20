@@ -50,3 +50,5 @@ do_it 'https://docs.kombit.dk/integration/sf1500/3.0/pakke' 'sf1500'
 cd "$project_dir"
 
 tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.pdf' -o index.html --houtro=/dev/null
+tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.wsdl' -o wsdl.html --houtro=/dev/null
+tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.xml' -o xml.html --houtro=/dev/null
