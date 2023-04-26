@@ -1,0 +1,49 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcmi:  <http://purl.org/dc/terms/> .
+@prefix qw:    <http://www.qualiware.com/> .
+@prefix kombitrm: <http://kombit.dk/releasemanagement/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov:  <https://www.w3.org/TR/prov-o/#> .
+@prefix www-addr: <https://www.w3.org/Addressing/> .
+
+qw:guid-0aae9938-e844-4ef4-8163-59508103b866
+        dcterms:references  <https://docs.kombit.dk/integration/sf1520/3.6/pakke> , <https://docs.kombit.dk/integration/sf1520/3.6/beskrivelse> .
+
+<https://docs.kombit.dk/integration/sf1520/3.6/pakke>
+        a                    dcterms:BibliographicResource ;
+        kombitrm:version     "3.6" ;
+        dcterms:created      "2021-04-29T11:02:53.849+0200" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/KRR> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf1520/3.6/pakke" ;
+        dcterms:title        "SF1520 - Dokumentationspakke til CPR replika opslag_3.6.zip" ;
+        www-addr:url         "file:///../SF1520+-+Dokumentationspakke+til+CPR+replika+opslag_3.6.zip" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+<https://docs.kombit.dk/integration/sf1520/latest/pakke>
+        a                    prov:Location ;
+        kombitrm:version     "3.6" ;
+        dcterms:created      "2021-04-29T11:02:53.849+0200" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/KRR> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf1520/latest/pakke" ;
+        www-addr:url         "https://docs.kombit.dk/integration/sf1520/3.6/pakke" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+<https://docs.kombit.dk/integration/sf1520/latest/beskrivelse>
+        a                    prov:Location ;
+        kombitrm:version     "3.6" ;
+        dcterms:created      "2021-04-29T11:02:53.849+0200" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/KRR> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf1520/latest/beskrivelse" ;
+        www-addr:url         "https://docs.kombit.dk/integration/sf1520/3.6/beskrivelse" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+<https://docs.kombit.dk/integration/sf1520/3.6/beskrivelse>
+        a                    dcterms:BibliographicResource ;
+        kombitrm:version     "3.6" ;
+        dcterms:created      "2021-04-29T11:02:53.849+0200" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/KRR> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf1520/3.6/beskrivelse" ;
+        dcterms:title        "SF1520 - CPR Replika opslag.pdf" ;
+        www-addr:url         "file:///./SF1520 - CPR Replika opslag.pdf" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
