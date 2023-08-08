@@ -57,7 +57,7 @@ cd "$project_dir" || exit
 
 for type in pdf wsdl xml xsd; do
     echo "type: $type"
-    tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$type.html" --houtro=/dev/null
+    tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$type.html" --houtro=resources/outro.html
 done
 
 cp pdf.html index.html
