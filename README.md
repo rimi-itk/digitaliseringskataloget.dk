@@ -10,7 +10,7 @@ Serve:
 
 ```sh
 docker compose up --detach
-open "http:///$(itkdev-docker-compose port nginx 8080)"
+open "http:///$(docker compose port nginx 8080)"
 ```
 
 ## Coding standards
