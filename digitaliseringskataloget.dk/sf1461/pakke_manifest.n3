@@ -11,44 +11,24 @@
 <https://docs.kombit.dk/integration/sf1461/1.0/beskrivelse>
         a                     dcterms:BibliographicResource ;
         kombitrm:version      "1.0" ;
-        dcterms:created       "2023-02-22T11:27:46.488+0100" ;
+        dcterms:created       "2023-07-11T16:32:00.319+0200" ;
         dcterms:creator       <http://kombit.dk/medarbejder/JRH> ;
         dcterms:identifier    "https://docs.kombit.dk/integration/sf1461/1.0/beskrivelse" ;
-        dcterms:title         "SF1461 - Modtag beskeder via Beskedfordeler 1.0.pdf" ;
+        dcterms:title         "SF1461 - Modtag beskeder via Beskedfordeler_1.0.pdf" ;
         prov:wasGeneratedBy   "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" ;
-        www-addr:url          "file:///./SF1461 - Modtag beskeder via Beskedfordeler 1.0.pdf" ;
+        www-addr:url          "file:///./SF1461 - Modtag beskeder via Beskedfordeler_1.0.pdf" ;
         provo:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
 
-<https://docs.kombit.dk/integration/sf1461/latest/beskrivelse>
-        a                     prov:Location , provo:Location ;
-        kombitrm:version      "1.0" ;
-        dcterms:created       "2023-02-22T11:27:46.488+0100" ;
-        dcterms:creator       <http://kombit.dk/medarbejder/JRH> ;
-        dcterms:identifier    "https://docs.kombit.dk/integration/sf1461/latest/beskrivelse" ;
-        prov:wasGeneratedBy   "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" ;
-        www-addr:url          "https://docs.kombit.dk/integration/sf1461/1.0/beskrivelse" ;
-        provo:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+qw:guid-ef9f1994-a2d4-4061-90cd-afce135bde53
+        dcterms:references  <https://docs.kombit.dk/integration/sf1461/1.0/pakke> , <https://docs.kombit.dk/integration/sf1461/1.0/beskrivelse> .
 
 <https://docs.kombit.dk/integration/sf1461/1.0/pakke>
         a                     dcterms:BibliographicResource ;
         kombitrm:version      "1.0" ;
-        dcterms:created       "2023-02-22T11:27:46.488+0100" ;
+        dcterms:created       "2023-07-11T16:32:00.319+0200" ;
         dcterms:creator       <http://kombit.dk/medarbejder/JRH> ;
         dcterms:identifier    "https://docs.kombit.dk/integration/sf1461/1.0/pakke" ;
         dcterms:title         "SF1461 - Dokumentationspakke til Modtag beskeder via Beskedfordeler_1.0.zip" ;
         prov:wasGeneratedBy   "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" ;
         www-addr:url          "file:///../SF1461+-+Dokumentationspakke+til+Modtag+beskeder+via+Beskedfordeler_1.0.zip" ;
         provo:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
-
-<https://docs.kombit.dk/integration/sf1461/latest/pakke>
-        a                     prov:Location , provo:Location ;
-        kombitrm:version      "1.0" ;
-        dcterms:created       "2023-02-22T11:27:46.488+0100" ;
-        dcterms:creator       <http://kombit.dk/medarbejder/JRH> ;
-        dcterms:identifier    "https://docs.kombit.dk/integration/sf1461/latest/pakke" ;
-        prov:wasGeneratedBy   "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" ;
-        www-addr:url          "https://docs.kombit.dk/integration/sf1461/1.0/pakke" ;
-        provo:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
-
-qw:guid-ef9f1994-a2d4-4061-90cd-afce135bde53
-        dcterms:references  <https://docs.kombit.dk/integration/sf1461/1.0/pakke> , <https://docs.kombit.dk/integration/sf1461/1.0/beskrivelse> .
