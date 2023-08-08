@@ -55,6 +55,9 @@ do_it 'https://docs.kombit.dk/integration/sf1520/4.0/pakke' 'sf1520_4.0'
 
 cd "$project_dir" || exit
 
-tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.pdf' -o index.html --houtro=/dev/null
-tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.wsdl' -o wsdl.html --houtro=/dev/null
-tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.xml' -o xml.html --houtro=/dev/null
+for type in pdf wsdl xml xsd; do
+    echo "type: $type"
+    tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$type.html" --houtro=/dev/null
+done
+
+cp pdf.html index.html
