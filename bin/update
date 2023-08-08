@@ -14,10 +14,10 @@ do_it() {
     tmp_filename="$target_dir/tmp.zip"
 
     cd "$target_dir" || exit
-    echo "${bold}Fetching $source_url${normal}"
+    echo "Fetching $source_url"
     curl --silent --location "$source_url" >| "$tmp_filename"
 
-    echo "${bold}Extracting in $target_path${normal}"
+    echo "Extracting in $target_path"
     rm -fr "$target_path"
     mkdir -p "$target_path"
     cd "$target_path" || exit
@@ -28,14 +28,14 @@ do_it() {
         if [ -z "$archive" ]; then
             break
         else
-            echo "${bold}Extracting $archive${normal}"
+            echo "Extracting $archive"
             exec_unzip -d "$(dirname "$archive")" -o "$archive" #> /dev/null 2>&1
             rm "$archive"
         fi
     done
 }
 
-cd "$project_dir"
+cd "$project_dir" || exit
 rm -fr digitaliseringskataloget.dk/
 
 # https://digitaliseringskataloget.dk/integration/sf1461
@@ -53,7 +53,7 @@ do_it 'https://docs.kombit.dk/integration/sf1520/3.6/pakke' 'sf1520_3.6'
 # https://digitaliseringskataloget.dk/integration/sf1520
 do_it 'https://docs.kombit.dk/integration/sf1520/4.0/pakke' 'sf1520_4.0'
 
-cd "$project_dir"
+cd "$project_dir" || exit
 
 tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.pdf' -o index.html --houtro=/dev/null
 tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P '*.wsdl' -o wsdl.html --houtro=/dev/null
