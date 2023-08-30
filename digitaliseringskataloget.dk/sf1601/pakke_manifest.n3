@@ -11,7 +11,7 @@
 <https://docs.kombit.dk/integration/sf1601/latest/pakke>
         a                     prov:Location , provo:Location ;
         kombitrm:version      "1.0" ;
-        dcterms:created       "2023-02-07T13:25:53.313+0100" ;
+        dcterms:created       "2023-08-14T10:23:12.134+0200" ;
         dcterms:creator       <http://kombit.dk/medarbejder/FVK> ;
         dcterms:identifier    "https://docs.kombit.dk/integration/sf1601/latest/pakke" ;
         prov:wasGeneratedBy   "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" ;
@@ -24,7 +24,7 @@ qw:guid-9daf776f-4ff1-4eca-b71c-4b4f7f1be9a8
 <https://docs.kombit.dk/integration/sf1601/1.0/beskrivelse>
         a                     dcterms:BibliographicResource ;
         kombitrm:version      "1.0" ;
-        dcterms:created       "2023-02-07T13:25:53.313+0100" ;
+        dcterms:created       "2023-08-14T10:23:12.134+0200" ;
         dcterms:creator       <http://kombit.dk/medarbejder/FVK> ;
         dcterms:identifier    "https://docs.kombit.dk/integration/sf1601/1.0/beskrivelse" ;
         dcterms:title         "Integrationsbeskrivelse SF1601 - Afsend Post.pdf" ;
@@ -35,7 +35,7 @@ qw:guid-9daf776f-4ff1-4eca-b71c-4b4f7f1be9a8
 <https://docs.kombit.dk/integration/sf1601/latest/beskrivelse>
         a                     prov:Location , provo:Location ;
         kombitrm:version      "1.0" ;
-        dcterms:created       "2023-02-07T13:25:53.313+0100" ;
+        dcterms:created       "2023-08-14T10:23:12.134+0200" ;
         dcterms:creator       <http://kombit.dk/medarbejder/FVK> ;
         dcterms:identifier    "https://docs.kombit.dk/integration/sf1601/latest/beskrivelse" ;
         prov:wasGeneratedBy   "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" ;
@@ -45,7 +45,7 @@ qw:guid-9daf776f-4ff1-4eca-b71c-4b4f7f1be9a8
 <https://docs.kombit.dk/integration/sf1601/1.0/pakke>
         a                     dcterms:BibliographicResource ;
         kombitrm:version      "1.0" ;
-        dcterms:created       "2023-02-07T13:25:53.313+0100" ;
+        dcterms:created       "2023-08-14T10:23:12.134+0200" ;
         dcterms:creator       <http://kombit.dk/medarbejder/FVK> ;
         dcterms:identifier    "https://docs.kombit.dk/integration/sf1601/1.0/pakke" ;
         dcterms:title         "SF1601 - Dokumentationspakke til Afsend post_1.0.zip" ;

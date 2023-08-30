@@ -1,0 +1,679 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0",
+    "x-svnRevision": "r4344",
+    "x-namespace": "http://www.kombit.dk/2017/01/01/",
+    "x-name": "KombiPostAfsend",
+    "x-source": "Serviceplatformen",
+    "title": "KombiPostAfsend",
+    "description": "  - memo afsender en fuldt udfoldet memo-XML-struktur- fjernprint afsender en struktur til dannelse af fysisk post  
+      ",
+    "contact": {
+      "name": "KDI Support",
+      "url": "https://digitaliseringskataloget.dk",
+      "email": "kdi@kombit.dk"
+    },
+    "license": {
+      "name": "KOMBIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://prod.serviceplatformen.dk/service/KombiPostAfsend_1"
+    },
+	    {
+      "url": "https://exttest.serviceplatformen.dk/service/KombiPostAfsend_1"
+    }
+  ],
+  "security": [ 
+	{ "kombitAccessToken": [] }
+  ],
+  "paths": {
+    "/memos": {
+      "parameters": [
+        {
+        	"$ref": "#/components/parameters/x-TransaktionsId"
+        },
+        {
+        	"$ref": "#/components/parameters/x-TransaktionsTid"
+        },
+        {
+        	"$ref": "#/components/parameters/x-OnBehalfOfUser"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Rute-AfsenderOrganisation"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Rute-AfsenderItSystemInstans"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Rute-ModtagerOrganisation"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Rute-ModtagerItSystemInstans"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Processing"
+        }
+      ],
+	  
+      "post": {
+        "summary": "SIGNAL_SUMMARY_INDSÆTTES_HER",
+        "description": "Receives individual xml MeMos and .zip files containing MeMos.",
+        "operationId": "0ec6b7e3-cd1e-4a92-ae9f-753576f53f87",
+        "parameters": [ {
+          "name" : "Content-Length",
+          "in" : "header",
+          "description" : "Size of Memo XML or tar.lzma file.",
+          "required" : true,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        }, {
+          "name" : "memo-message-uuid",
+          "in" : "query",
+          "description" : "messageUUID of MeMo to send. Required when Content-Type is either application/xml or text/xml. Not applicable when content type is application/x-lzma.",
+          "required" : true,
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "type" : "string",
+                "format" : "uuid"
+              }
+            }
+          }
+        } ],
+		"requestBody":{ 
+		   "content":{ 
+			  "application/xml":{ 
+				 "schema":{ 
+					"type":"string",
+					"format":"binary"
+				 }
+			  }
+		   }
+		},
+        "responses": {
+          "200": {
+            "description": "Det samlede kald gik godt. Se specifikke svarbeskrivelser i SvarReaktion i body.",
+            "content": {
+             "application/json": {
+                "schema": {
+					"$ref": "#/components/schemas/memos_response"
+                }
+              },
+             "application/xml": {
+                "schema": {
+					"$ref": "#/components/schemas/memos_response"
+                }
+              }
+			  
+            },
+            "headers": {
+				"x-TransaktionsId": {
+					"$ref": "#/components/headers/x-TransaktionsId"
+				},
+				"x-TransaktionsTid": {
+					"$ref": "#/components/headers/x-TransaktionsTid"
+				}
+			}
+          },
+          "500": {
+            "description": "Kald til kilde fejlede. Se specifikke svarbeskrivelser i SvarReaktion i body.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error_response"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/error_response"
+                }
+              }
+            },
+            "headers": {
+				"x-TransaktionsId": {
+					"$ref": "#/components/headers/x-TransaktionsId"
+				},
+				"x-TransaktionsTid": {
+					"$ref": "#/components/headers/x-TransaktionsTid"
+				}
+            }
+          },
+          "default": { 
+            "description": "Fejl. Se specifikke svarbeskrivelser i SvarReaktion i body.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/error_response"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/error_response"
+                }
+              }
+            },
+            "headers": {
+				"x-TransaktionsId": {
+					"$ref": "#/components/headers/x-TransaktionsId"
+				},
+				"x-TransaktionsTid": {
+					"$ref": "#/components/headers/x-TransaktionsTid"
+				}
+            }
+          }
+        }
+      }
+      
+    },
+    "/kombi": {
+      "parameters": [
+        {
+        	"$ref": "#/components/parameters/x-TransaktionsId"
+        },
+        {
+        	"$ref": "#/components/parameters/x-TransaktionsTid"
+        },
+        {
+        	"$ref": "#/components/parameters/x-OnBehalfOfUser"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Rute-AfsenderOrganisation"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Rute-AfsenderItSystemInstans"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Rute-ModtagerOrganisation"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Rute-ModtagerItSystemInstans"
+        },
+        {
+        	"$ref": "#/components/parameters/x-Processing"
+        }
+      ],
+	  
+      "post": {
+        "summary": "SIGNAL_SUMMARY_INDSÆTTES_HER",
+        "description" : "# Afsend \n__enten__\n* Memos (Memo 1.1.0)\nMemos modtages som et enkelt XML document.\n\n__eller__\n* Fjernprint (urn:oio:fjernprint:1.0.0)\nFjernprint modtages om et enkelt XML document.\n\nVed brug af Automatisk Valg udfyldes begge, og servicen vil afgøre hvilken kanal der anvendes.\n## Memo som XML\n* Content-Type: __application/xml__ eller __text/xml__\n* Request body er Memo 1.1.0 XML.\n* Link til schema [https://bitbucket.org/nc-dp/memo-lib-java/src/release-0.7.2/src/main/resources/schemas/](https://bitbucket.org/nc-dp/memo-lib-java/src/release-0.7.2/src/main/resources/schemas/).\n\n## Fjernprint som XML\n* Content-Type: __application/xml__ eller __text/xml__\n* Request body er Fjernprint 1.0.0 XML.\n* Link til schema [https://docs.kombit.dk/integration/sf1601/1.0/pakke](https://docs.kombit.dk/integration/sf1601/1.0/pakke).\n\n",        
+       "operationId": "b3d56074-c010-4c74-a0e2-b99e6a922ca9",
+        "parameters": [
+        ],
+	  "requestBody":{ 
+	      "content":{ 
+		  "application/xml": { 
+		      "schema": { 
+			  "$ref": "#/components/schemas/kombi_request"
+		      }
+		  }
+	      }
+	  },
+        "responses": {
+          "200": {
+            "description": "Det samlede kald gik godt. Se specifikke svarbeskrivelser i SvarReaktion i body.",
+            "content": {
+              "application/xml": {
+                "schema": {
+		    "$ref": "#/components/schemas/kombi_response"
+                }
+              }
+            },
+            "headers": {
+		"x-TransaktionsId": {
+		    "$ref": "#/components/headers/x-TransaktionsId"
+		},
+		"x-TransaktionsTid": {
+		    "$ref": "#/components/headers/x-TransaktionsTid"
+		}
+	    }
+          },
+          "500": {
+            "description": "Kald til kilde fejlede. Se specifikke svarbeskrivelser i SvarReaktion i body.",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/HovedoplysningerSvarREST"
+                }
+              }
+            },
+            "headers": {
+		"x-TransaktionsId": {
+		    "$ref": "#/components/headers/x-TransaktionsId"
+		},
+		"x-TransaktionsTid": {
+		    "$ref": "#/components/headers/x-TransaktionsTid"
+		}
+            }
+          },
+          "default": { 
+            "description": "Fejl. Se specifikke svarbeskrivelser i SvarReaktion i body.",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/HovedoplysningerSvarREST"
+                }
+              }
+            },
+            "headers": {
+				"x-TransaktionsId": {
+					"$ref": "#/components/headers/x-TransaktionsId"
+				},
+				"x-TransaktionsTid": {
+					"$ref": "#/components/headers/x-TransaktionsTid"
+				}
+            }
+          }
+        }
+      }
+      
+    }
+  },
+  "components": {
+      "headers": {
+        "x-TransaktionsId": {
+          "required": true,
+	  "description": "Unik identifier for konversation. Når kald og svar hænger sammen som dele af samme konversation, bruges samme TransaktionsId i både kald og svar. Når et kald passeres videre til eller fra et undersystem, passeres TransaktionsId også videre uændret.",
+	  "schema": {
+	    "$ref": "#/components/schemas/x-TransaktionsId"
+	  }
+        },
+        "x-TransaktionsTid": {
+          "required": true,
+	  "description": "Tidsstempel der påsættes af oprindelig kalder, som indikering af kaldstidspunktet som det opfattes af kalder. Når et kald passeres videre til eller fra et undersystem, passeres TransaktionsTid også videre uændret.",
+	  "schema": {
+	    "$ref": "#/components/schemas/x-TransaktionsTid"
+	    }
+        }
+      },
+      "parameters": {
+        "x-TransaktionsId": {
+          "name": "x-TransaktionsId",
+          "in": "header",
+          "required": true,
+          "description": "Unik identifier for konversation. Når kald og svar hænger sammen som dele af samme konversation, bruges samme TransaktionsId i både kald og svar. Når et kald passeres videre til eller fra et undersystem, passeres TransaktionsId også videre uændret.",
+          "schema": {
+            "$ref": "#/components/schemas/x-TransaktionsId"
+          }
+        },
+        "x-TransaktionsTid": {
+          "name": "x-TransaktionsTid",
+          "in": "header",
+          "required": true,
+          "description": "Tidsstempel der påsættes af oprindelig kalder, som indikering af kaldstidspunktet som det opfattes af kalder. Når et kald passeres videre til eller fra et undersystem, passeres TransaktionsTid også videre uændret.",
+          "schema": {
+            "$ref": "#/components/schemas/x-TransaktionsTid"
+          }
+        },
+        "x-OnBehalfOfUser": {
+          "name": "x-OnBehalfOfUser",
+          "in": "header",
+          "required": false,
+          "description": "Identifikation af en bruger i det kaldende system",
+          "schema": {
+            "$ref": "#/components/schemas/x-OnBehalfOfUser"
+          }
+        },
+        "x-Rute-AfsenderOrganisation": {
+          "name": "x-Rute-AfsenderOrganisation",
+          "in": "header",
+          "required": false,
+          "description": "Identificerer kaldende organisation.",
+          "schema": {
+            "$ref": "#/components/schemas/x-Rute-AfsenderOrganisation"
+          }
+        },
+        "x-Rute-AfsenderItSystemInstans": {
+          "name": "x-Rute-AfsenderItSystemInstans",
+          "in": "header",
+          "required": false,
+          "description": "En UUID der identificerer kaldende it-systeminstans, indsat af kalder. UUID refererer til it-systeminstans fra KOMBIT Organisation støttesystem.",
+          "schema": {
+            "$ref": "#/components/schemas/x-Rute-AfsenderItSystemInstans"
+          }
+        },
+        "x-Rute-ModtagerOrganisation": {
+          "name": "x-Rute-ModtagerOrganisation",
+          "in": "header",
+          "required": false,
+          "description": "Identificerer modtagende organisation.",
+          "schema": {
+            "$ref": "#/components/schemas/x-Rute-ModtagerOrganisation"
+          }
+        },
+        "x-Rute-ModtagerItSystemInstans": {
+          "name": "x-Rute-ModtagerItSystemInstans",
+          "in": "header",
+          "required": false,
+          "description": "En UUID der identificerer kaldte it-systeminstans, indsat af kalder. UUID refererer til it-systeminstans fra KOMBIT Organisation støttesystem.",
+          "schema": {
+            "$ref": "#/components/schemas/x-Rute-ModtagerItSystemInstans"
+          }
+        },
+        "x-Processing": {
+          "name": "x-Processing",
+          "in": "header",
+          "required": false,
+          "description": "Mulighed for at passere yderligere kontekstuelle variable, f.eks. instrukser til teststubbe.",
+          "schema": {
+            "$ref": "#/components/schemas/x-Processing"
+          }
+        }
+      },
+	  "securitySchemes": {
+		"kombitAccessToken": {
+			"type": "apiKey",
+			"in": "header",
+			"name": "Authorization"
+		}
+    },
+  "schemas": {
+	"memos_response": {
+		"allOf": [
+			{
+				"type": "object",
+				"properties": {
+					"Result": {
+						"$ref": "#/components/schemas/MarkeringType"
+					},
+					"TransmissionID": {
+						"$ref": "#/components/schemas/UUIDType"
+					},
+					"HovedoplysningerSvarREST": {
+						"$ref": "#/components/schemas/HovedoplysningerSvarREST"
+					}
+				}
+			},
+			{ "required": [ "HovedoplysningerSvarREST" ] }
+		]
+	},
+	"kombi_request": {
+	    "allOf": [
+		{
+		    "type": "object",
+		    "properties": {
+			"KombiValgKode": {
+			    "$ref": "#/components/schemas/KombiValgKode"
+			},
+			"ForsendelseISamling": {
+			    "$ref": "#/components/schemas/ForsendelseISamling"
+			},
+			"Message":{
+			    "$ref": "#/components/schemas/MemoMessage"
+			}
+		    }
+		}, 
+		{
+		    "required": [ "KombiValgKode" ]
+		},
+		{
+		    "oneOf": [
+			{
+			    "required": [ "Message" ]
+			},
+			{
+			    "required": [ "ForsendelseISamling" ]
+			}
+		    ]
+		}
+	    ]
+	},
+    "kombi_response": {
+		"allOf": [
+			{
+				"type": "object",
+				"properties": {
+					"Result": {
+						"$ref": "#/components/schemas/MarkeringType"
+					},
+					"TransmissionID": {
+						"$ref": "#/components/schemas/UUIDType"
+					},
+					"HovedoplysningerSvarREST": {
+						"$ref": "#/components/schemas/HovedoplysningerSvarREST"
+					}
+				}
+			},
+			{ "required": [ "HovedoplysningerSvarREST" ] }
+		]
+    },
+    "KombiValgKode": {
+	"type" : "string",
+	"enum": [ "Automatisk Valg", "Digital Post", "Fjernprint Kanalvalg", "Fysisk Post", "NemSMS" ]
+    },
+	"MarkeringType": {
+		"description": "",
+		"type": "boolean"
+	},
+	 "UUIDType": {
+	                "description": "  UUID = Universally unique identifier.Et 128-bit nummer, som bruges til at identificere information i it-systemer.  
+      ",
+
+	   "type": "string"
+		
+,
+	   "pattern": "^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$"
+					
+	 },
+    "MemoMessage" : {
+		"type" : "object"
+    },
+    "ForsendelseISamling": {
+		"type": "object"
+    },
+	"x-TransaktionsId": {
+	    "type": "string",
+	    "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}[.[0-9]+]*$"
+	},
+	"x-TransaktionsTid": {
+	    "type": "string",
+	    "format": "xs:dateTime" 
+	},
+        "x-OnBehalfOfUser": {
+            "type": "string",
+            "pattern": "^[.]{0,256}$"
+        },
+        "x-Rute-AfsenderOrganisation": {
+            "type": "string",
+            "pattern": "^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"
+        },
+        "x-Rute-AfsenderItSystemInstans": {
+            "type": "string",
+			"format": "xs:dateTime",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+        },
+        "x-Rute-ModtagerOrganisation": {
+            "type": "string",
+            "pattern": "^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"
+        },
+        "x-Rute-ModtagerItSystemInstans": {
+            "type": "string",
+			"format": "xs:dateTime",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[4][0-9A-Fa-f]{3}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}$"
+        },
+        "x-Processing": {
+            "type": "string"
+        },
+	"error_response": {
+		"allOf": [
+			{
+				"type": "object",
+				"properties": {
+					"HovedoplysningerSvarREST": {
+						"$ref": "#/components/schemas/HovedoplysningerSvarREST"
+					}
+				}
+			},
+			{ "required": [ "HovedoplysningerSvarREST" ] }
+		]
+	},
+	"HovedoplysningerSvarREST": {
+		"type": "array",
+		"items": {
+			"allOf" : [
+				{
+					"type": "object",
+					"properties": {
+						"SvarReaktion": {
+							"$ref": "#/components/schemas/SvarReaktion"
+						}
+					},
+					"xml": {
+						"prefix": "kontekst"
+					}
+				},
+				{ "required": [ "SvarReaktion" ] }
+			]
+		}
+	},
+	"SvarReaktion": {
+		"allOf" : [
+			{
+				"type": "object",
+				"properties": {
+					"Fejl": {
+						"$ref": "#/components/schemas/Fejl"
+					},
+					"Advis": {
+						"$ref": "#/components/schemas/Advis"
+					}
+				},
+				"xml": {
+					"prefix": "kontekst"
+				}
+			},
+			{
+				"oneOf": [
+					{ "required": ["Fejl"] },
+					{ "required": ["Advis"] },
+					{
+						"not":	{
+							"anyOf": [
+								{ "required": ["Fejl"] },
+								{ "required": ["Advis"] }
+							]
+						}
+					}
+				]
+			}
+		],
+		"xml": {
+			"prefix": "kontekst",
+			"namespace": "http://kombit.dk/xml/schemas/kontekst/2017/01/01/"
+		}
+	  },
+      "Fejl": {
+		"allOf" : [
+			{
+				"type": "object",
+				"properties": {
+				  "FejlId": {
+					"type": "string",
+					"description": "Unik identifikation for fejlen fra fejludstederen. Sammen med KildeId er fejlen unik på tværs af systemer.",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  },
+				  "FejlTekst": {
+					"type": "string",
+					"description": "Beskrivende tekst for fejlen. Udfyldes af fejludsteder.",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  },
+				  "KildeId": {
+					"type": "string",
+					"description": "Kontekst for fejlen eller advisen. Unik identifikation af udstederen. Indsættes af fejl- eller advisudsteder selv. Ved viderepassage af en fejl eller advis, passeres KildeId også videre uændret.",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  },
+				  "Identifikation": {
+					"type": "string",
+					"description": "Giver mulighed for, at passere variable værdier der beskriver fejl eller advis detaljeret, og gøre disse variable maskinelt processerbare for modtager.",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  },
+				  "status": {
+					"type": "string",
+					"description": "HTTP status kode",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  }
+				}
+			},
+			{
+				"required": [
+				  "FejlId",
+				  "FejlTekst"
+				]
+			}
+		],
+		"xml": {
+			"prefix": "kontekst"
+		}
+      },
+      "Advis": {
+		"allOf" : [
+			{
+				"type": "object",
+				"properties": {
+				  "AdvisId": {
+					"type": "string",
+					"description": "Unik identifikation for advisen fra advisudstederen. Sammen med KildeId er advisen unik på tværs af systemer.",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  },
+				  "AdvisTekst": {
+					"type": "string",
+					"description": "Beskrivende tekst for advisen. Udfyldes af advisudsteder.",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  },
+				  "KildeId": {
+					"type": "string",
+					"description": "Kontekst for fejlen eller advisen. Unik identifikation af udstederen. Indsættes af fejl- eller advisudsteder selv. Ved viderepassage af en fejl eller advis, passeres KildeId også videre uændret.",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  },
+				  "Identifikation": {
+					"type": "string",
+					"description": "Giver mulighed for, at passere variable værdier der beskriver fejl eller advis detaljeret, og gøre disse variable maskinelt processerbare for modtager.",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  },
+				  "status": {
+					"type": "string",
+					"description": "HTTP status kode",
+					"xml": {
+						"prefix": "kontekst"
+					}
+				  }
+				}
+			},
+			{
+				"required": [
+				  "AdvisId",
+				  "AdvisTekst"
+				]
+			}
+		],
+		"xml": {
+			"prefix": "kontekst"
+		}
+      }	
+    }
+  }
+}
+	  
+
