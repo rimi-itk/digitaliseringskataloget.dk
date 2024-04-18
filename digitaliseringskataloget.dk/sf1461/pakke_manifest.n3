@@ -11,7 +11,7 @@
 <https://docs.kombit.dk/integration/sf1461/1.0/beskrivelse>
         a                     dcterms:BibliographicResource ;
         kombitrm:version      "1.0" ;
-        dcterms:created       "2023-07-11T16:32:00.319+0200" ;
+        dcterms:created       "2023-09-04T11:24:14.742+0200" ;
         dcterms:creator       <http://kombit.dk/medarbejder/JRH> ;
         dcterms:identifier    "https://docs.kombit.dk/integration/sf1461/1.0/beskrivelse" ;
         dcterms:title         "SF1461 - Modtag beskeder via Beskedfordeler_1.0.pdf" ;
@@ -25,7 +25,7 @@ qw:guid-ef9f1994-a2d4-4061-90cd-afce135bde53
 <https://docs.kombit.dk/integration/sf1461/1.0/pakke>
         a                     dcterms:BibliographicResource ;
         kombitrm:version      "1.0" ;
-        dcterms:created       "2023-07-11T16:32:00.319+0200" ;
+        dcterms:created       "2023-09-04T11:24:14.804+0200" ;
         dcterms:creator       <http://kombit.dk/medarbejder/JRH> ;
         dcterms:identifier    "https://docs.kombit.dk/integration/sf1461/1.0/pakke" ;
         dcterms:title         "SF1461 - Dokumentationspakke til Modtag beskeder via Beskedfordeler_1.0.zip" ;
