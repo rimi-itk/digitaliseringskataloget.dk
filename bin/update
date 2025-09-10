@@ -39,22 +39,22 @@ cd "$project_dir" || exit
 rm -fr digitaliseringskataloget.dk/
 
 # https://digitaliseringskataloget.dk/integration/sf1461
-do_it 'https://docs.kombit.dk/integration/sf1461/1.0/pakke' 'sf1461'
+# do_it 'https://docs.kombit.dk/integration/sf1461/1.0/pakke' 'sf1461/1.0'
+do_it 'https://docs.kombit.dk/integration/sf1461/2.0/pakke' 'sf1461/2.0'
 
 # https://digitaliseringskataloget.dk/integration/sf1601
-do_it 'https://docs.kombit.dk/integration/sf1601/1.0/pakke' 'sf1601'
+do_it 'https://docs.kombit.dk/integration/sf1601/1.0/pakke' 'sf1601/1.0'
 
 # https://digitaliseringskataloget.dk/integration/sf1500
-do_it 'https://docs.kombit.dk/integration/sf1500/3.0/pakke' 'sf1500'
+# do_it 'https://docs.kombit.dk/integration/sf1500/3.0/pakke' 'sf1500/3.0'
+do_it 'https://docs.kombit.dk/integration/sf1500/3.2/pakke' 'sf1500/3.2'
 
 # https://digitaliseringskataloget.dk/integration/sf1520
-do_it 'https://docs.kombit.dk/integration/sf1520/3.6/pakke' 'sf1520_3.6'
-
-# https://digitaliseringskataloget.dk/integration/sf1520
-do_it 'https://docs.kombit.dk/integration/sf1520/4.0/pakke' 'sf1520_4.0'
+# do_it 'https://docs.kombit.dk/integration/sf1520/3.6/pakke' 'sf1520/3.6'
+do_it 'https://docs.kombit.dk/integration/sf1520/4.0/pakke' 'sf1520/4.0'
 
 # https://digitaliseringskataloget.dk/integration/sf2900
-do_it 'https://docs.kombit.dk/integration/sf2900/2.4/pakke' 'sf2900_2.4'
+do_it 'https://docs.kombit.dk/integration/sf2900/2.4/pakke' 'sf2900/2.4'
 
 cd "$project_dir" || exit
 
