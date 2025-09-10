@@ -60,7 +60,13 @@ cd "$project_dir" || exit
 
 for type in pdf wsdl xml xsd; do
     echo "type: $type"
-    tree --gitignore --prune --noreport -H '.' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$type.html" --houtro=resources/outro.html
+    tree --gitignore --prune --noreport -H '' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$type.html" --houtro=resources/outro.html
+    # Decode some characters.
+    sed --in-place \
+        -e 's/%FFFFFFC3%FFFFFFA6/æ/' \
+        -e 's/%FFFFFFC3%FFFFFFB8/ø/' \
+        -e 's/%FFFFFFC3%FFFFFFA5/å/' \
+        "$type.html"
 done
 
 cp pdf.html index.html
