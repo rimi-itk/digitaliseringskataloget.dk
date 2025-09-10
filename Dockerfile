@@ -10,4 +10,4 @@ RUN \
     rm -rf /var/lib/apt/lists/*
 
 # Important for making filenames with non-ascii characters work in bind volumes.
-ENV LANG C.UTF-8
+ENV LANG=C.UTF-8

@@ -1,0 +1,27 @@
+services:
+  mariadb: !reset []
+  mail:  !reset []
+
+  phpfpm:
+    depends_on: !reset
+
+  nginx:
+    depends_on: !reset
+    environment:
+      NGINX_WEB_ROOT: /app
+
+  ubuntu:
+    build: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    profiles:
+      - dev
+
+  shellcheck:
+    image: koalaman/shellcheck-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    profiles:
+      - dev
