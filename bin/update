@@ -53,6 +53,9 @@ do_it 'https://docs.kombit.dk/integration/sf1520/3.6/pakke' 'sf1520_3.6'
 # https://digitaliseringskataloget.dk/integration/sf1520
 do_it 'https://docs.kombit.dk/integration/sf1520/4.0/pakke' 'sf1520_4.0'
 
+# https://digitaliseringskataloget.dk/integration/sf2900
+do_it 'https://docs.kombit.dk/integration/sf2900/2.4/pakke' 'sf2900_2.4'
+
 cd "$project_dir" || exit
 
 for type in pdf wsdl xml xsd; do

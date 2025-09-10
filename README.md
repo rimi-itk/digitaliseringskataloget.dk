@@ -10,7 +10,7 @@ Serve:
 
 ``` shell name=serve
 docker compose up --detach --remove-orphans
-open "http://$(docker compose port nginx 8080)"
+open "http://$(docker compose port nginx 8080)/index.html"
 ```
 
 ## Coding standards

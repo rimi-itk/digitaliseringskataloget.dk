@@ -1,0 +1,49 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcmi:  <http://purl.org/dc/terms/> .
+@prefix qw:    <http://www.qualiware.com/> .
+@prefix kombitrm: <http://kombit.dk/releasemanagement/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov:  <https://www.w3.org/TR/prov-o/#> .
+@prefix www-addr: <https://www.w3.org/Addressing/> .
+
+<https://docs.kombit.dk/integration/sf2900/latest/pakke>
+        a                    prov:Location ;
+        kombitrm:version     "2.4" ;
+        dcterms:created      "2021-08-05T12:52:17.886+0200" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/CHA> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf2900/latest/pakke" ;
+        www-addr:url         "https://docs.kombit.dk/integration/sf2900/2.4/pakke" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+qw:guid-41570200-c3ce-4f60-969f-43753b01e75b
+        dcterms:references  <https://docs.kombit.dk/integration/sf2900/2.4/pakke> , <https://docs.kombit.dk/integration/sf2900/2.4/beskrivelse> .
+
+<https://docs.kombit.dk/integration/sf2900/latest/beskrivelse>
+        a                    prov:Location ;
+        kombitrm:version     "2.4" ;
+        dcterms:created      "2021-08-05T12:52:17.886+0200" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/CHA> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf2900/latest/beskrivelse" ;
+        www-addr:url         "https://docs.kombit.dk/integration/sf2900/2.4/beskrivelse" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+<https://docs.kombit.dk/integration/sf2900/2.4/pakke>
+        a                    dcterms:BibliographicResource ;
+        kombitrm:version     "2.4" ;
+        dcterms:created      "2021-08-05T12:52:17.886+0200" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/CHA> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf2900/2.4/pakke" ;
+        dcterms:title        "SF2900 - Dokumentationspakke til Fordelingskomponenten_2.4.zip" ;
+        www-addr:url         "file:///../SF2900+-+Dokumentationspakke+til+Fordelingskomponenten_2.4.zip" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
+
+<https://docs.kombit.dk/integration/sf2900/2.4/beskrivelse>
+        a                    dcterms:BibliographicResource ;
+        kombitrm:version     "2.4" ;
+        dcterms:created      "2021-08-05T12:52:17.886+0200" ;
+        dcterms:creator      <http://kombit.dk/medarbejder/CHA> ;
+        dcterms:identifier   "https://docs.kombit.dk/integration/sf2900/2.4/beskrivelse" ;
+        dcterms:title        "SF2900 - Fordelingskomponent V2.4.pdf" ;
+        www-addr:url         "file:///./SF2900 - Fordelingskomponent V2.4.pdf" ;
+        prov:wasGeneratedBy  "KDI-Tools Pakkegenerator 20200429-SNAPSHOT" .
