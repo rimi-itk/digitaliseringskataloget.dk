@@ -1,2 +1,3 @@
 *.zip
 .env*.local
+_site

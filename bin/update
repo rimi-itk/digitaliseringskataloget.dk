@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 project_dir=$(pwd)
-target_dir="$project_dir"
+target_dir="$project_dir/_site"
 
 exec_unzip() {
     unzip -O CP850 -q "$@"
@@ -10,6 +10,8 @@ exec_unzip() {
 do_it() {
     source_url="$1"
     target_path="$target_dir/digitaliseringskataloget.dk/$2"
+
+    mkdir -p "$target_path"
 
     tmp_filename="$target_dir/tmp.zip"
 
@@ -36,6 +38,7 @@ do_it() {
 }
 
 cd "$project_dir" || exit
+
 rm -fr digitaliseringskataloget.dk/
 
 # https://digitaliseringskataloget.dk/integration/sf1461
@@ -56,17 +59,23 @@ do_it 'https://docs.kombit.dk/integration/sf1520/4.0/pakke' 'sf1520/4.0'
 # https://digitaliseringskataloget.dk/integration/sf2900
 do_it 'https://docs.kombit.dk/integration/sf2900/2.4/pakke' 'sf2900/2.4'
 
-cd "$project_dir" || exit
+cd "$target_dir" || exit
 
 for type in pdf wsdl xml xsd; do
     echo "type: $type"
-    tree --gitignore --prune --noreport -H '' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$type.html" --houtro=resources/outro.html
+    tree --prune --noreport -H '' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$target_dir/$type.html" --houtro=../resources/outro.html digitaliseringskataloget.dk
+
     # Decode some characters.
     sed --in-place \
         -e 's/%FFFFFFC3%FFFFFFA6/æ/' \
         -e 's/%FFFFFFC3%FFFFFFB8/ø/' \
         -e 's/%FFFFFFC3%FFFFFFA5/å/' \
         "$type.html"
+
+    # Unwrap directory links.
+    sed --in-place \
+        -e 's~<a href="[^>]*/">\([^<]*\)</a>~\1~' \
+        "$type.html"
 done
 
-cp pdf.html index.html
+cp "$target_dir/pdf.html" "$target_dir/index.html"
