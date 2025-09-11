@@ -63,7 +63,7 @@ cd "$target_dir" || exit
 
 for type in pdf wsdl xml xsd; do
     echo "type: $type"
-    tree --prune --noreport -H '' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$target_dir/$type.html" --houtro=../resources/outro.html digitaliseringskataloget.dk
+    tree --prune --noreport -H '' -T 'digitaliseringskataloget.dk' --charset utf-8 -P "*.$type" -o "$target_dir/$type.html" --hintro=../resources/intro.html --houtro=../resources/outro.html digitaliseringskataloget.dk
 
     # Decode some characters.
     sed --in-place \
